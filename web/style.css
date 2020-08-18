@@ -1,0 +1,17 @@
+body {
+  background: #DCF2FD;
+  padding-top: 80px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 80px;
+}
+
+#box {
+  background: url('./imgs/1596791116.png');
+}
