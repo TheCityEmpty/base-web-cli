@@ -1,6 +1,6 @@
 /**
  * @description base-web-cli 的单独配置
- * @param {Array} pages 所有页面 **注意：最后一个页面对应一个js文件（页面文件和js文件名字要相同），
+ * @param {Array} pages 所有页面 **注意：一个页面对应一个js文件（页面文件和js文件名字要相同），
  * 但是可以在此js文件中引入其他js文件, 数组第一个就是运行程序自动打开的页面。
  * @param {String} env 环境变量， 分别为 'dev'(开发环境) 和 'prd'(生产环境), 默认为dev
  * @param {Object} APP__GLOBAL__VAR_DEV dev环境中的全局变量， 可在任意地方访问到， 可用来设置 接口地址等公共硬编码
