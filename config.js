@@ -15,7 +15,8 @@
 module.exports = {
   pages: [
     'index',
-    'cli'
+    'cli',
+    'res'
   ],
   env: 'dev',
   APP__GLOBAL__VAR_DEV: {

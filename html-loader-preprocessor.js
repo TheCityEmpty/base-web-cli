@@ -7,7 +7,7 @@ const codeTypeMap = {
   html: '?',
   js: '<script>?</script>',
   css: '<style>?</style>'
-}
+} 
 module.exports = function (htmlCode) {
     htmlCode = htmlCode.replace(scriptReg, (m, $1, $2, $3, $4, $5) => {
       return $1 + $2 + transformES2015($3) + $4 + $5 

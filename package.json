@@ -1,14 +1,17 @@
 {
   "name": "base-web-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.1",
+  "description": "A cli based on native Web",
   "main": "index.js",
+  "bin": {
+    "base-web-cli": "bin/index.js"
+  },
   "scripts": {
     "build": "npx webpack --mode=production",
     "dev": "npx webpack-dev-server --mode=development --progress"
   },
   "keywords": [],
-  "author": "",
+  "author": "luoxuehui",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -29,6 +32,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "colors": "^1.4.0",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
     "jquery": "^3.5.1"
   }
 }
