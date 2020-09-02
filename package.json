@@ -1,6 +1,6 @@
 {
   "name": "base-web-cli",
-  "version": "1.1.1",
+  "version": "1.1.5",
   "description": "A cli based on native Web",
   "main": "index.js",
   "bin": {

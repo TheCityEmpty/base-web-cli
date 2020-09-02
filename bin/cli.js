@@ -3,7 +3,6 @@ const inquirer = require('inquirer')
 const path = require('path')
 const fsExtra = require('fs-extra')
 const fs = require('fs')
-
 async function init () {
 	const { productName } = await inquirer.prompt([
 		{
@@ -20,7 +19,6 @@ async function init () {
 		return
 	}
 }
-
 async function validateProductName (val, done) {
 	if (/[A-Za-z]{1}\w*/.test(val)) {
 		const { isExists } = await exists(val)
@@ -36,36 +34,28 @@ async function validateProductName (val, done) {
     return
 	}
 }
-
-
 async function copyProduct (productName) {
 	fs.mkdirSync(`./${productName}`)
 	// process.cwd() 当前node命令执行时所在的文件夹目录
 	// __dirname 指被执行js文件所在的文件夹目录
 	const cwd = process.cwd()
-	console.log('指被执行js文件所在的文件夹目录:__dirname:' + __dirname)
-	console.log('当前node命令执行时所在的文件夹目录:cwd:' + cwd)
-
 	try {
 		await fsExtra.copy(
-			path.resolve(__dirname, './'),
+			path.resolve(__dirname, '../'),
 			path.resolve(cwd, `./${productName}/`),
 			{ filter (src, dest) {
-				if (/[^]*node_modules[^]*/.test(src)) {
+				if (/[^]*\\base-web-cli\\node_modules[^]*/.test(src)) {
 					return false
-				} else if (/[^]*.git[^]*/.test(src)){
+				}  else if (/[^]*\\base-web-cli\\bin[^]*/.test(src)){
 					return false
-				} else if (/[^]*bin[^]*/.test(src)){
-					return false
+				} else {
+					return true
 				}
-
-				return true
 			} })
 	} catch (error) {
 		console.log(error)
 	}
 }
-
 function exists (productName) {
 	return new Promise(resolve => {
 		fs.exists(`./${productName}`, function (exists) {
@@ -77,8 +67,6 @@ function exists (productName) {
 		})
 	})
 }
-
-
 module.exports = {
 	init
 }
