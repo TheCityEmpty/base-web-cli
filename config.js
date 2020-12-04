@@ -15,8 +15,7 @@
 module.exports = {
   pages: [
     'index',
-    'cli',
-    'res'
+    'cli'
   ],
   env: 'dev',
   APP__GLOBAL__VAR_DEV: {
@@ -27,8 +26,7 @@ module.exports = {
   },
   requireFileUrl: {
     header: './web/header.html',
-    Pages: './web/js/Pages.js',
-    footer: './web/footer.html'
+    Pages: './web/js/Pages.js'
   },
   GlobalCSSVar: setGlobalCSSVar({
     '@mainColor': 'red',
